@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">Food</string>
+    <string name="app_name">食尚客</string>
+
+
+    <string name="app_name_release">食尚客商家</string>
+    <string name="app_name_debug">食尚客Debug</string>
+
+    <string name="app_sp">mind</string>
+
+    <string name="app_url_api">https://quanqdg88.cn:8088/</string>
+    <string name="app_url_api_debug">http://120.79.224.38:8088/</string>
+
+
+    <string name="save">保存</string>
+    <string name="dialog_title">提示</string>
+    <string name="other_phone_login">该账号在其他设备登录\n请重新登录</string>
 </resources>

@@ -1,7 +1,8 @@
-package com.ssk.food
+package com.ssk.food.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.ssk.food.R
 
 class MainActivity : AppCompatActivity() {
 
