@@ -46,17 +46,72 @@ public class RequestAction {
 
 
     /**
-     * 登录
+     * 账号密码登录
      */
-    public final static int TAG_LOGIN = 0;
+    public final static int TAG_ACCOUNT_LOGIN = 0;
 
-    public Disposable login(RetrofitHelper retrofitHelper, HttpCallBack httpCallBack, String account, String pwd) {
-
+    public Disposable accountLogin(RetrofitHelper retrofitHelper, HttpCallBack httpCallBack, String account, String pwd) {
         HashMap<String, Object> map = new HashMap<>(2);
         map.put("account", account);
         map.put("LoginPwd", MD5Utlis.Md5(pwd));
-        return retrofitHelper.getDisposable(TAG_LOGIN, getParams("y_GasStation_login", map), httpCallBack, true);
+        return retrofitHelper.getDisposable(TAG_ACCOUNT_LOGIN, getParams("y_GasStation_login", map), httpCallBack, true);
     }
+
+    /**
+     * 手机验证码登录
+     */
+    public final static int TAG_PHONE_LOGIN = 1;
+
+    public Disposable phoneLogin(RetrofitHelper retrofitHelper, HttpCallBack httpCallBack, String phone, String code) {
+        HashMap<String, Object> map = new HashMap<>(2);
+
+        return retrofitHelper.getDisposable(TAG_PHONE_LOGIN, getParams("y_GasStation_login", map), httpCallBack, true);
+    }
+
+    /**
+     * 获取登录验证码
+     */
+    public final static int TAG_GET_LOGIN_CODE = 2;
+
+    public Disposable getLoginCode(RetrofitHelper retrofitHelper, HttpCallBack httpCallBack, String phone) {
+        HashMap<String, Object> map = new HashMap<>(2);
+
+        return retrofitHelper.getDisposable(TAG_GET_LOGIN_CODE, getParams("y_GasStation_login", map), httpCallBack, true);
+    }
+
+    /**
+     * 获取注册验证码
+     */
+    public final static int TAG_GET_REGISTER_CODE = 3;
+
+    public Disposable getRegisterCode(RetrofitHelper retrofitHelper, HttpCallBack httpCallBack, String phone) {
+        HashMap<String, Object> map = new HashMap<>(2);
+
+        return retrofitHelper.getDisposable(TAG_GET_REGISTER_CODE, getParams("y_GasStation_login", map), httpCallBack, true);
+    }
+
+    /**
+     * 注册下一步
+     */
+    public final static int TAG_REGISTER_NEXT = 4;
+
+    public Disposable registerNext(RetrofitHelper retrofitHelper, HttpCallBack httpCallBack, String phone, String code) {
+        HashMap<String, Object> map = new HashMap<>(2);
+
+        return retrofitHelper.getDisposable(TAG_REGISTER_NEXT, getParams("y_GasStation_login", map), httpCallBack, true);
+    }
+
+    /**
+     * 注册
+     */
+    public final static int TAG_REGISTER = 5;
+
+    public Disposable register(RetrofitHelper retrofitHelper, HttpCallBack httpCallBack, String account, String pwd) {
+        HashMap<String, Object> map = new HashMap<>(2);
+
+        return retrofitHelper.getDisposable(TAG_REGISTER, getParams("y_GasStation_login", map), httpCallBack, true);
+    }
+
 
 
 }

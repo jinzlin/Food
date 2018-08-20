@@ -9,6 +9,7 @@
     <color name="black3">#333333</color>
     <color name="black6">#666666</color>
     <color name="black9">#999999</color>
+    <color name="grayc">#cccccc</color>
     <color name="gray5">#e5e5e5</color>
     <color name="gray6">#e6e6e6</color>
 </resources>

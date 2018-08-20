@@ -64,7 +64,7 @@ public class ServerEvent {
                                             @Override
                                             public void onClick(View v) {
                                                 CommonUtils.exitLogon();
-//                                                Intent intent = new Intent(lastContext, LoginActivity.class);
+//                                                Intent intent = new Intent(lastContext, LoginFragment.class);
 //                                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //                                                lastContext.startActivity(intent);
 //                                                ((Activity) lastContext).finish();

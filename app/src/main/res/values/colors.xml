@@ -6,4 +6,7 @@
 
 
     <color name="colorBackground">#F5F5F5</color>
+
+    <color name="colorMain">#FF5655</color>
+    <color name="colorMain_pressed">#FF9999</color>
 </resources>

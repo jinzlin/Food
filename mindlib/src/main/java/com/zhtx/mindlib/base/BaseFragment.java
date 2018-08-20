@@ -19,6 +19,7 @@ import com.zhtx.mindlib.widge.MDialog;
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 
 /**
@@ -40,6 +41,7 @@ public abstract class BaseFragment<T extends BaseContract.BasePresenter> extends
     protected RxPermissions rxPermissions;
     private LoadDialog loadDialog;
     protected MDialog mDialog;
+    Unbinder unbinder;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,7 +56,7 @@ public abstract class BaseFragment<T extends BaseContract.BasePresenter> extends
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(initResource(), container, false);
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
         initInject();
         initPresenter();
         initData();
@@ -117,6 +119,7 @@ public abstract class BaseFragment<T extends BaseContract.BasePresenter> extends
     @Override
     public void onDestroy() {
         super.onDestroy();
+        unbinder.unbind();
         loadDialog.dismiss();
         if (null != mPresenter) {
             mPresenter.detachView();

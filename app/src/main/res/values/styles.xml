@@ -1,11 +1,66 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="@andorid:style/Theme.AppCompat.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+
+
+    <!--按钮-->
+    <style name="btn_style01">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">96px</item>
+        <item name="android:textSize">30px</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/btn_style_01</item>
+    </style>
+
+
+    <!--text black3-->
+    <style name="text_b3">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black3</item>
+    </style>
+
+    <!--text black3 30px -->
+    <style name="text_b3_30" parent="text_b3">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">30px</item>
+    </style>
+
+    <!--输入-->
+    <style name="input_30_left">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/black3</item>
+        <item name="android:textColorHint">@color/black9</item>
+        <item name="android:textSize">30px</item>
+        <item name="android:background">@null</item>
+    </style>
+
+
+    <!--输入-->
+    <style name="input_32_left">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/black3</item>
+        <item name="android:textColorHint">@color/black9</item>
+        <item name="android:textSize">32px</item>
+        <item name="android:background">@null</item>
+    </style>
+
 
 </resources>

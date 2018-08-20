@@ -14,4 +14,55 @@
     <string name="save">保存</string>
     <string name="dialog_title">提示</string>
     <string name="other_phone_login">该账号在其他设备登录\n请重新登录</string>
+
+    <!--Login start-->
+    <string name="login_title">登录</string>
+    <string name="login_account">账号</string>
+    <string name="login_account_hint">请输入登录账号</string>
+    <string name="login_account_toast">请输入有效账号</string>
+    <string name="login_pwd">密码</string>
+    <string name="login_pwd_hint">请输入登录密码</string>
+    <string name="login_phone">手机号码</string>
+    <string name="login_phone_hint">请输入手机号码</string>
+    <string name="login_phone_toast">请输入有效手机号</string>
+    <string name="login_code">验证码</string>
+    <string name="login_code_hint">请输入验证码</string>
+    <string name="login_get_code">获取验证码</string>
+    <string name="login_phone_login">手机验证码登录</string>
+    <string name="login_account_login">账号密码登录</string>
+    <string name="login_froget_pwd">忘记密码?</string>
+
+    <!--Register start-->
+    <string name="register_title">注册</string>
+    <string name="register_phone">手机号码</string>
+    <string name="register_phone_hint">请输入手机号码</string>
+    <string name="register_phone_toast">请输入有效手机号</string>
+    <string name="register_code">验证码</string>
+    <string name="register_code_hint">请输入验证码</string>
+    <string name="register_get_code">获取验证码</string>
+    <string name="register_next">下一步</string>
+    <string name="register_account">设置登录账号,注册后不可更改</string>
+    <string name="register_account_hint">6-11位数字</string>
+    <string name="register_account_toast">账号只能设置为6-11位数字</string>
+    <string name="register_pwd">设置密码</string>
+    <string name="register_pwd_hint">6-15位字母大小写与数字组合</string>
+    <string name="register_pwd2">再次确认密码</string>
+    <string name="register_pwd2_hint">6-15位字母大小写与数字组合</string>
+    <string name="register_pwd_toast">密码不一致,请重新设置</string>
+
+    <!--ForgetPwd start-->
+    <string name="forgetPwd_title">找回密码</string>
+    <string name="forgetPwd_phone">手机号码</string>
+    <string name="forgetPwd_phone_hint">请输入手机号码</string>
+    <string name="forgetPwd_phone_toast">请输入有效手机号</string>
+    <string name="forgetPwd_code">验证码</string>
+    <string name="forgetPwd_code_hint">请输入验证码</string>
+    <string name="forgetPwd_get_code">获取验证码</string>
+    <string name="forgetPwd_next">下一步</string>
+    <string name="forgetPwd_pwd">设置密码</string>
+    <string name="forgetPwd_pwd_hint">6-15位字母大小写与数字组合</string>
+    <string name="forgetPwd_pwd2">再次确认密码</string>
+    <string name="forgetPwd_pwd2_hint">6-15位字母大小写与数字组合</string>
+    <string name="forgetPwd_pwd_toast">密码不一致,请重新设置</string>
+
 </resources>
