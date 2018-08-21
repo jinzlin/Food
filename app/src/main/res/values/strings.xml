@@ -15,6 +15,16 @@
     <string name="dialog_title">提示</string>
     <string name="other_phone_login">该账号在其他设备登录\n请重新登录</string>
 
+    <string name="app_default_money">0.00</string>
+    <string name="app_default_int">0</string>
+
+
+    <!--main start-->
+    <string name="main_handled">待处理</string>
+    <string name="main_shop">店铺</string>
+    <string name="main_order">订单</string>
+    <string name="main_my">我的</string>
+
     <!--Login start-->
     <string name="login_title">登录</string>
     <string name="login_account">账号</string>
@@ -64,5 +74,29 @@
     <string name="forgetPwd_pwd2">再次确认密码</string>
     <string name="forgetPwd_pwd2_hint">6-15位字母大小写与数字组合</string>
     <string name="forgetPwd_pwd_toast">密码不一致,请重新设置</string>
+    <string name="forgetPwd_complete">完成</string>
+
+    <!--Shop start-->
+    <string name="shop_title">店铺</string>
+    <string name="shop_creat">点击创建店铺</string>
+    <string name="shop_sale_data">销售数据</string>
+    <string name="shop_today_sale">今日销售额(元）</string>
+    <string name="shop_today_order">今日订单(单）</string>
+    <string name="shop_function">实用功能</string>
+    <string name="shop_release">发布菜品</string>
+    <string name="shop_manage_food">菜品管理</string>
+    <string name="shop_manage_table">餐桌管理</string>
+    <string name="shop_hot_food">热销菜品</string>
+    <string name="shop_manage_sort">分类管理</string>
+    <string name="shop_restaurant_info">餐厅信息</string>
+
+    <!--My start-->
+    <string name="my_title">我的</string>
+
+    <!--Order start-->
+    <string name="order_title">订单</string>
+
+    <!--Handled start-->
+    <string name="handled_title">待处理</string>
 
 </resources>

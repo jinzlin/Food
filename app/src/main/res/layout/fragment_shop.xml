@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="275px"
+        android:background="@drawable/bg_main"
+        android:paddingBottom="38px"
+        android:paddingLeft="30px"
+        android:paddingRight="30px">
+
+        <RelativeLayout
+            android:id="@+id/rl_shop_myshop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <!--图标-->
+            <ImageView
+                android:id="@+id/iv_shop_pic"
+                android:layout_width="88px"
+                android:layout_height="88px"
+                android:background="@mipmap/ic_shop_creat"
+                app:layout_auto_basewidth="height" />
+
+            <!--名称-->
+            <TextView
+                android:id="@+id/tv_shop_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="50px"
+                android:layout_toRightOf="@+id/iv_shop_pic"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/shop_creat"
+                android:textColor="@color/white"
+                android:textSize="36px" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="243px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="20px"
+        android:background="@drawable/bg_radius20_white">
+
+        <View
+            android:id="@+id/v_01"
+            android:layout_width="4px"
+            android:layout_height="24px"
+            android:layout_marginTop="30px"
+            android:background="@color/colorMain" />
+
+        <TextView
+            style="@style/text_b3_28"
+            android:layout_alignTop="@+id/v_01"
+            android:layout_marginLeft="40px"
+            android:text="@string/shop_sale_data" />
+
+        <View
+            android:id="@+id/v_02"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40px"
+            android:layout_marginRight="40px"
+            android:layout_marginTop="86px"
+            android:background="@color/gray5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/v_02"
+            android:gravity="center"
+            android:weightSum="2">
+
+            <!--今日销售额-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40px"
+                android:layout_marginRight="40px"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_shop_today_sales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_default_money"
+                    android:textColor="@color/black3"
+                    android:textSize="32px" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shop_today_sale"
+                    android:layout_marginTop="30px"
+                    android:textColor="@color/black3"
+                    android:textSize="24px" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="76px"
+                android:background="@color/gray5" />
+
+            <!--今日成交订单-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40px"
+                android:layout_marginRight="40px"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_shop_today_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/app_default_int"
+                    android:textColor="@color/black3"
+                    android:textSize="32px" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_marginTop="30px"
+                    android:text="@string/shop_today_order"
+                    android:textColor="@color/black3"
+                    android:textSize="24px" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="20px"
+        android:background="@drawable/bg_radius20_white">
+
+        <View
+            android:id="@+id/v_03"
+            android:layout_width="4px"
+            android:layout_height="24px"
+            android:layout_marginTop="30px"
+            android:background="@color/colorMain" />
+
+        <TextView
+            style="@style/text_b3_28"
+            android:layout_alignTop="@+id/v_03"
+            android:layout_marginLeft="40px"
+            android:text="@string/shop_function" />
+
+        <View
+            android:id="@+id/v_04"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40px"
+            android:layout_marginRight="40px"
+            android:layout_marginTop="86px"
+            android:background="@color/gray5" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_shop_01"
+            android:layout_below="@+id/v_04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

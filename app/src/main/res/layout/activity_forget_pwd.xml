@@ -1,13 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
 
     <RelativeLayout
+        android:id="@+id/rl_00"
+        android:layout_width="match_parent"
+        android:layout_height="260px"
+        android:background="@color/colorMain">
+
+
+        <ImageView
+            android:id="@+id/iv_titlebar_back"
+            android:layout_width="88px"
+            android:layout_height="88px"
+            android:layout_marginLeft="30px"
+            android:padding="25px"
+            android:src="@mipmap/ic_titlebar_back"
+            app:layout_auto_basewidth="height" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="28px"
+            android:layout_marginLeft="60px"
+            android:text="@string/forgetPwd_title"
+            android:textColor="@color/black3"
+            android:textSize="32px" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/rl_forgetPwd1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/rl_00"
         android:paddingLeft="60px"
         android:paddingRight="60px"
         android:visibility="gone">
@@ -73,6 +102,7 @@
                     android:background="@color/grayc" />
 
                 <TextView
+                    android:id="@+id/tv_code"
                     android:layout_width="178px"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
@@ -103,6 +133,7 @@
         android:id="@+id/rl_forgetPwd2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/rl_00"
         android:paddingLeft="60px"
         android:paddingRight="60px">
 
@@ -130,13 +161,13 @@
 
             <!--显示隐藏密码-->
             <RelativeLayout
-                android:id="@+id/rl_register_show1"
+                android:id="@+id/rl_forgetPwd_show1"
                 android:layout_width="80px"
                 android:layout_height="112px"
                 android:layout_alignParentRight="true">
 
                 <ImageView
-                    android:id="@+id/iv_register_show"
+                    android:id="@+id/iv_forgetPwd_show"
                     android:layout_width="32px"
                     android:layout_height="32px"
                     android:layout_centerInParent="true"
@@ -153,35 +184,35 @@
             android:background="@color/gray6" />
 
         <TextView
-            android:id="@+id/tv_register_pwd2"
+            android:id="@+id/tv_forgetPwd_pwd2"
             style="@style/text_b3_30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/rl_02"
             android:layout_marginTop="56px"
-            android:text="@string/register_pwd2" />
+            android:text="@string/forgetPwd_pwd2" />
 
         <!--密码-->
         <RelativeLayout
             android:id="@+id/rl_03"
             android:layout_width="match_parent"
             android:layout_height="112px"
-            android:layout_below="@+id/tv_register_pwd2">
+            android:layout_below="@+id/tv_forgetPwd_pwd2">
 
             <EditText
-                android:id="@+id/et_register_pwd2"
+                android:id="@+id/et_forgetPwd_pwd2"
                 style="@style/input_30_left"
-                android:layout_toLeftOf="@+id/rl_register_del"
-                android:hint="@string/register_pwd2_hint"
+                android:layout_toLeftOf="@+id/rl_forgetPwd_del"
+                android:hint="@string/forgetPwd_pwd2_hint"
                 android:inputType="textPassword" />
 
             <!--清空-->
             <RelativeLayout
-                android:id="@+id/rl_register_del"
+                android:id="@+id/rl_forgetPwd_del"
                 android:layout_width="80px"
                 android:layout_height="112px"
-                android:visibility="gone"
-                android:layout_toLeftOf="@+id/rl_register_show2">
+                android:layout_toLeftOf="@+id/rl_forgetPwd_show2"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="32px"
@@ -193,13 +224,13 @@
 
             <!--显示隐藏密码-->
             <RelativeLayout
-                android:id="@+id/rl_register_show2"
+                android:id="@+id/rl_forgetPwd_show2"
                 android:layout_width="80px"
                 android:layout_height="112px"
                 android:layout_alignParentRight="true">
 
                 <ImageView
-                    android:id="@+id/iv_register_show2"
+                    android:id="@+id/iv_forgetPwd_show2"
                     android:layout_width="32px"
                     android:layout_height="32px"
                     android:layout_centerInParent="true"
@@ -216,11 +247,11 @@
             android:background="@color/gray6" />
 
         <Button
-            android:id="@+id/btn_register"
+            android:id="@+id/btn_forgetPwd"
             style="@style/btn_style01"
             android:layout_below="@+id/rl_03"
             android:layout_marginTop="134px"
-            android:text="@string/register_title" />
+            android:text="@string/forgetPwd_complete" />
 
     </RelativeLayout>
 

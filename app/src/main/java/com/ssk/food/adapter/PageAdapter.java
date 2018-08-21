@@ -1,5 +1,6 @@
 package com.ssk.food.adapter;
 
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -15,11 +16,13 @@ import java.util.ArrayList;
 
 public class PageAdapter extends FragmentPagerAdapter {
 
-    private ArrayList<Fragment> mFragments = new ArrayList<>();
+    private ArrayList<Fragment> mFragments;
+    private String[] mTitles;
 
-    public PageAdapter(FragmentManager fm, ArrayList<Fragment> mFragments) {
+    public PageAdapter(FragmentManager fm, ArrayList<Fragment> mFragments, String[] mTitles) {
         super(fm);
         this.mFragments = mFragments;
+        this.mTitles = mTitles;
     }
 
     @Override
@@ -30,5 +33,11 @@ public class PageAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return mFragments.size();
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return mTitles[position];
     }
 }

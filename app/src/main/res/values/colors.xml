@@ -9,4 +9,6 @@
 
     <color name="colorMain">#FF5655</color>
     <color name="colorMain_pressed">#FF9999</color>
+
+    <color name="color_main_bottomBar_text">#B3B3B3</color>
 </resources>

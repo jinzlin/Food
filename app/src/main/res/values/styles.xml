@@ -35,6 +35,13 @@
         <item name="android:textSize">30px</item>
     </style>
 
+    <!--text black3 28px -->
+    <style name="text_b3_28" parent="text_b3">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">28px</item>
+    </style>
+
     <!--输入-->
     <style name="input_30_left">
         <item name="android:layout_width">match_parent</item>

@@ -1,5 +1,6 @@
 package com.ssk.food.ui.login.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -15,6 +16,8 @@ import com.ssk.food.R;
 import com.ssk.food.di.component.DaggerActivityComponent;
 import com.ssk.food.di.module.RequestActionModule;
 import com.ssk.food.server.RequestAction;
+import com.ssk.food.ui.login.forgetpwd.ForgetPwdActivity;
+import com.ssk.food.ui.main.MainActivity;
 import com.zhtx.mindlib.base.BaseApp;
 import com.zhtx.mindlib.base.BaseFragment;
 import com.zhtx.mindlib.di.module.AcitvityModule;
@@ -132,7 +135,7 @@ public class LoginFragment extends BaseFragment<LoginPresenter> implements Login
 
     @Override
     public void frogetPwd() {
-
+        startActivity(new Intent(getActivity(), ForgetPwdActivity.class));
     }
 
     @Override
@@ -164,10 +167,10 @@ public class LoginFragment extends BaseFragment<LoginPresenter> implements Login
 
     @Override
     public void loginSuccess() {
-
+        startActivity(new Intent(getActivity(), MainActivity.class));
     }
 
-    @OnClick({R.id.rl_login_get_code, R.id.rl_login_del, R.id.rl_login_show, R.id.btn_login_login})
+    @OnClick({R.id.rl_login_get_code, R.id.rl_login_del, R.id.rl_login_show, R.id.tv_login_switch, R.id.tv_login_forget_pwd, R.id.btn_login_login})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rl_login_get_code:
@@ -179,9 +182,21 @@ public class LoginFragment extends BaseFragment<LoginPresenter> implements Login
             case R.id.rl_login_show:
                 showPwd();
                 break;
+            case R.id.tv_login_switch:
+                if (tvLoginAccount.getText().toString().equals("账号")) {
+                    switchPhoneLogin();
+                } else {
+                    switchAccountLogin();
+                }
+                break;
+            case R.id.tv_login_forget_pwd:
+                frogetPwd();
+                break;
             case R.id.btn_login_login:
-                login();
+//                login();
+                loginSuccess();
                 break;
         }
     }
+
 }

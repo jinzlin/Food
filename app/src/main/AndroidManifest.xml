@@ -18,7 +18,7 @@
             android:name="design_height"
             android:value="1334" />
 
-        <activity android:name=".ui.MainActivity"></activity>
+        <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.login.LoginAndRegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,3 +31,4 @@
     </application>
 
 </manifest>
+

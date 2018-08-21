@@ -17,22 +17,20 @@
         tl:layout_constraintTop_toTopOf="parent"
         tl:srcCompat="@mipmap/ip_default_image" />
 
-    <com.flyco.tablayout.SegmentTabLayout
+
+    <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/tab_login_register"
-        android:layout_width="400px"
-        android:layout_height="64px"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        tl:layout_constraintBottom_toBottomOf="@+id/imageView"
+        tl:layout_constraintBottom_toTopOf="@+id/vp_login_register"
         tl:layout_constraintEnd_toEndOf="parent"
         tl:layout_constraintStart_toStartOf="parent"
-        tl:tl_indicator_anim_enable="true"
-        tl:tl_indicator_bounce_enable="false"
         tl:tl_indicator_color="@color/colorMain"
-        tl:tl_indicator_corner_radius="4dp"
-        tl:tl_tab_padding="30px" />
+        tl:tl_indicator_width="10dp"
+        tl:tl_textSelectColor="@color/black3"
+        tl:tl_textUnselectColor="@color/black3" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_login_register"

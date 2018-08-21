@@ -19,4 +19,18 @@ public class ForgetPwdPresenter extends BasePresenter<ForgetPwdContract.ContView
     ForgetPwdPresenter() {
     }
 
+    @Override
+    public void requestGetCode(String phone) {
+
+    }
+
+    @Override
+    public void requestNext(String phone, String code) {
+
+    }
+
+    @Override
+    public void requestComplete(String pwd) {
+
+    }
 }
