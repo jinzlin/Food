@@ -2,15 +2,19 @@ package com.ssk.food.ui.login;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.githang.statusbar.StatusBarCompat;
 import com.ssk.food.R;
 import com.ssk.food.adapter.PageAdapter;
 import com.ssk.food.ui.login.login.LoginFragment;
 import com.ssk.food.ui.login.register.RegisterFragment;
+import com.ssk.food.ui.main.MainActivity;
+import com.ssk.food.utils.CommonUtils;
 import com.zhtx.mindlib.base.BaseActivity;
 
 import java.util.ArrayList;
@@ -38,6 +42,7 @@ public class LoginAndRegisterActivity extends BaseActivity {
 
     @Override
     public void initData() {
+        CommonUtils.setTransparentForWindow(this);
         String[] mTitles = new String[]{getString(R.string.login_title), getString(R.string.register_title)};
 
         mFragments.add(new LoginFragment());

@@ -10,40 +10,26 @@ import com.zhtx.mindlib.base.BaseContract;
 public interface ForgetPwdContract {
 
     interface ContView extends BaseContract.BaseView {
-        /**
-         * 获取验证码
-         */
-        void getCode();
 
         /**
-         * 下一步
+         * 获取验证码成功
          */
-        void next();
+        void getCodeSuccess();
 
         /**
          * 下一步成功
          */
-        void nextSuccess();
-
-        /**
-         * 清空密码
-         */
-        void delPwd();
-
-        /**
-         * 显示隐藏密码
-         */
-        void showPwd1();
-
-        /**
-         * 显示隐藏密码
-         */
-        void showPwd2();
+        void nextSuccess(String phone);
 
         /**
          * 完成
          */
-        void complete();
+        void submit();
+
+        /**
+         * 设置成功
+         */
+        void submitSuccess();
     }
 
     interface ContPresenter<T> extends BaseContract.BasePresenter<T> {
@@ -52,6 +38,6 @@ public interface ForgetPwdContract {
 
         void requestNext(String phone, String code);
 
-        void requestComplete(String pwd);
+        void requestComplete(String phone, String pwd);
     }
 }

@@ -12,39 +12,24 @@ public interface RegisterContract {
     interface ContView extends BaseContract.BaseView {
 
         /**
-         * 获取验证码
+         * 获取验证码成功
          */
-        void getCode();
-
-        /**
-         * 下一步
-         */
-        void next();
+        void getCodeSuccess();
 
         /**
          * 下一步成功
          */
-        void nextSuccess();
-
-        /**
-         * 清空密码
-         */
-        void delPwd();
-
-        /**
-         * 显示隐藏密码
-         */
-        void showPwd1();
-
-        /**
-         * 显示隐藏密码
-         */
-        void showPwd2();
+        void nextSuccess(String phone);
 
         /**
          * 注册
          */
         void register();
+
+        /**
+         * 注册成功
+         */
+        void registerSuccess();
     }
 
     interface ContPresenter<T> extends BaseContract.BasePresenter<T> {
@@ -53,6 +38,6 @@ public interface RegisterContract {
 
         void requestNext(String phone, String code);
 
-        void requestRegister(String account, String pwd);
+        void requestRegister(String phone, String account, String pwd);
     }
 }

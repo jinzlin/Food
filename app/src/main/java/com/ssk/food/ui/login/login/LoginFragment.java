@@ -1,13 +1,13 @@
 package com.ssk.food.ui.login.login;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -18,32 +18,29 @@ import com.ssk.food.di.module.RequestActionModule;
 import com.ssk.food.server.RequestAction;
 import com.ssk.food.ui.login.forgetpwd.ForgetPwdActivity;
 import com.ssk.food.ui.main.MainActivity;
+import com.ssk.food.utils.GetCodeManage;
 import com.zhtx.mindlib.base.BaseApp;
 import com.zhtx.mindlib.base.BaseFragment;
 import com.zhtx.mindlib.di.module.AcitvityModule;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 
 /**
  * 作者:
  * 描述:Main
  */
 
-public class LoginFragment extends BaseFragment<LoginPresenter> implements LoginContract.ContView {
+public class LoginFragment extends BaseFragment<LoginPresenter> implements LoginContract.ContView, GetCodeManage.GetCodeListener {
 
-    @BindView(R.id.tv_login_account)
-    TextView tvLoginAccount;
+    @BindView(R.id.rl_login)
+    RelativeLayout rlLogin;
+    @BindView(R.id.fl_login)
+    FrameLayout flLogin;
     @BindView(R.id.et_login_account)
     EditText etLoginAccount;
-    @BindView(R.id.tv_login_pwd)
-    TextView tvLoginPwd;
     @BindView(R.id.et_login_pwd)
     EditText etLoginPwd;
-    @BindView(R.id.rl_login_get_code)
-    RelativeLayout rlLoginGetCode;
     @BindView(R.id.rl_login_del)
     RelativeLayout rlLoginDel;
     @BindView(R.id.iv_login_show)
@@ -52,6 +49,10 @@ public class LoginFragment extends BaseFragment<LoginPresenter> implements Login
     RelativeLayout rlLoginShow;
     @BindView(R.id.tv_login_switch)
     TextView tvLoginSwitch;
+
+    GetCodeManage getCodeManage;
+    private View view;
+    private boolean isPhoneLogin;
 
     private boolean pswVisible = false; // 密码是否可见
 
@@ -73,17 +74,9 @@ public class LoginFragment extends BaseFragment<LoginPresenter> implements Login
 
     @Override
     public void initData() {
-
-    }
-
-    @Override
-    public void getCode() {
-        String phone = etLoginAccount.getText().toString().trim();
-        if (phone.length() < 11) {
-            mToast.showToast(getString(R.string.login_phone_toast));
-        } else {
-            mPresenter.requestGetCode(phone);
-        }
+        getCodeManage = new GetCodeManage(getActivity(), this);
+        view = getCodeManage.getView();
+        flLogin.addView(view);
     }
 
     @Override
@@ -95,42 +88,28 @@ public class LoginFragment extends BaseFragment<LoginPresenter> implements Login
     public void showPwd() {
         if (pswVisible) {
             pswVisible = false;
-            ivLoginShow.setImageResource(R.mipmap.ic_login_show);
-            etLoginPwd.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            ivLoginShow.setImageResource(R.mipmap.ic_pwd_unshow);
+            etLoginPwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
         } else {
             pswVisible = true;
-            ivLoginShow.setImageResource(R.mipmap.ic_login_unshow);
-            etLoginPwd.setInputType(InputType.TYPE_CLASS_TEXT);
+            ivLoginShow.setImageResource(R.mipmap.ic_pwd_show);
+            etLoginPwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
         }
         etLoginPwd.setSelection(etLoginPwd.getText().toString().length());
     }
 
     @Override
     public void switchAccountLogin() {
-        tvLoginAccount.setText(getString(R.string.login_account));
-        etLoginAccount.setHint(getString(R.string.login_account_hint));
-        etLoginAccount.setText("");
-        tvLoginPwd.setText(getString(R.string.login_pwd));
-        etLoginPwd.setHint(getString(R.string.login_pwd_hint));
-        etLoginPwd.setText("");
-        rlLoginGetCode.setVisibility(View.GONE);
-        rlLoginDel.setVisibility(View.VISIBLE);
-        rlLoginShow.setVisibility(View.VISIBLE);
-        tvLoginSwitch.setText(getString(R.string.login_account_login));
+        isPhoneLogin = false;
+        rlLogin.setVisibility(View.VISIBLE);
+        flLogin.setVisibility(View.GONE);
     }
 
     @Override
     public void switchPhoneLogin() {
-        tvLoginAccount.setText(getString(R.string.login_phone));
-        etLoginAccount.setHint(getString(R.string.login_phone_hint));
-        etLoginAccount.setText("");
-        tvLoginPwd.setText(getString(R.string.login_code));
-        etLoginPwd.setHint(getString(R.string.login_code_hint));
-        etLoginPwd.setText("");
-        rlLoginGetCode.setVisibility(View.VISIBLE);
-        rlLoginDel.setVisibility(View.GONE);
-        rlLoginShow.setVisibility(View.GONE);
-        tvLoginSwitch.setText(getString(R.string.login_phone_login));
+        isPhoneLogin = true;
+        rlLogin.setVisibility(View.GONE);
+        flLogin.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -140,11 +119,11 @@ public class LoginFragment extends BaseFragment<LoginPresenter> implements Login
 
     @Override
     public void login() {
-        String account = etLoginAccount.getText().toString().trim();
-        String pwd = etLoginPwd.getText().toString().trim();
-        if (tvLoginAccount.getText().toString().equals("账号")) {
+        if (!isPhoneLogin) {
+            String account = etLoginAccount.getText().toString().trim();
+            String pwd = etLoginPwd.getText().toString().trim();
             if (TextUtils.isEmpty(account)) {
-                mToast.showToast(getString(R.string.login_account_toast));
+                mToast.showToast(getString(R.string.login_account_hint));
             } else if (account.length() < 6) {
                 mToast.showToast(getString(R.string.login_account_toast));
             } else if (TextUtils.isEmpty(pwd)) {
@@ -153,15 +132,7 @@ public class LoginFragment extends BaseFragment<LoginPresenter> implements Login
                 mPresenter.requestAccountLogin(account, pwd);
             }
         } else {
-            if (TextUtils.isEmpty(account)) {
-                mToast.showToast(getString(R.string.login_phone_toast));
-            } else if (account.length() < 11) {
-                mToast.showToast(getString(R.string.login_phone_toast));
-            } else if (TextUtils.isEmpty(pwd)) {
-                mToast.showToast(getString(R.string.login_code_hint));
-            } else {
-                mPresenter.requestPhoneLogin(account, pwd);
-            }
+            getCodeManage.next();
         }
     }
 
@@ -170,12 +141,9 @@ public class LoginFragment extends BaseFragment<LoginPresenter> implements Login
         startActivity(new Intent(getActivity(), MainActivity.class));
     }
 
-    @OnClick({R.id.rl_login_get_code, R.id.rl_login_del, R.id.rl_login_show, R.id.tv_login_switch, R.id.tv_login_forget_pwd, R.id.btn_login_login})
+    @OnClick({R.id.rl_login_del, R.id.rl_login_show, R.id.tv_login_switch, R.id.tv_login_forget_pwd, R.id.btn_login_login})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.rl_login_get_code:
-                getCode();
-                break;
             case R.id.rl_login_del:
                 delPwd();
                 break;
@@ -183,7 +151,7 @@ public class LoginFragment extends BaseFragment<LoginPresenter> implements Login
                 showPwd();
                 break;
             case R.id.tv_login_switch:
-                if (tvLoginAccount.getText().toString().equals("账号")) {
+                if (!isPhoneLogin) {
                     switchPhoneLogin();
                 } else {
                     switchAccountLogin();
@@ -193,10 +161,18 @@ public class LoginFragment extends BaseFragment<LoginPresenter> implements Login
                 frogetPwd();
                 break;
             case R.id.btn_login_login:
-//                login();
-                loginSuccess();
+                login();
                 break;
         }
     }
 
+    @Override
+    public void getCode(String phone) {
+        mPresenter.requestGetCode(phone);
+    }
+
+    @Override
+    public void next(String phone, String code) {
+        mPresenter.requestPhoneLogin(phone, code);
+    }
 }

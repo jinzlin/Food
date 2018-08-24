@@ -46,7 +46,7 @@ public interface ConstantUtlis {
     /**
      * 昵称
      */
-    String SP_STATION_NAME = "SP_STATION_NAME";
+    String SP_NIKE_NAME = "SP_NIKE_NAME";
     /**
      * 头像
      */
@@ -60,11 +60,7 @@ public interface ConstantUtlis {
      */
     String SP_IS_AUTHENTICATION = "SP_IS_AUTHENTICATION";
     /**
-     * 油站联系方式
+     * 身份类别
      */
-    String SP_CONTACT = "SP_CONTACT";
-    /**
-     * 身份类别 负责人/收银员
-     */
-    String SP_STATUS_TYPE = "SP_STATUS_TYPE";
+    String SP_IS_MAIN_ACCOUNT = "SP_IS_MAIN_ACCOUNT";
 }

@@ -11,6 +11,13 @@ public interface MyContract {
 
     interface ContView extends BaseContract.BaseView {
 
+        void initInfo();
+
+        void isBranch();
+
+        void isMain();
+
+        void putForwary();
     }
 
     interface ContPresenter<T> extends BaseContract.BasePresenter<T> {

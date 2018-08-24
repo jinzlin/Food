@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tl="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,18 +9,16 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        tl:layout_constraintDimensionRatio="w,75:26"
-        tl:layout_constraintEnd_toEndOf="parent"
-        tl:layout_constraintStart_toStartOf="parent"
-        tl:layout_constraintTop_toTopOf="parent"
-        tl:srcCompat="@mipmap/ip_default_image" />
+        android:layout_width="match_parent"
+        android:layout_height="260px"
+        android:background="@mipmap/bg_login" />
 
 
     <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/tab_login_register"
         android:layout_width="wrap_content"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_centerHorizontal="true"
         android:layout_height="48dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -34,12 +32,9 @@
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_login_register"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        tl:layout_constraintBottom_toBottomOf="parent"
-        tl:layout_constraintEnd_toEndOf="parent"
-        tl:layout_constraintStart_toStartOf="parent"
-        tl:layout_constraintTop_toBottomOf="@+id/imageView">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageView">
     </android.support.v4.view.ViewPager>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

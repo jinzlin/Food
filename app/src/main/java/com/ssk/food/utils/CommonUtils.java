@@ -155,22 +155,22 @@ public class CommonUtils {
      *
      * @return true负责人
      */
-    public static boolean isAdministrator() {
-        String statusType = mSharedPreferences.getString(ConstantUtlis.SP_STATUS_TYPE, "");
-        return "负责人".equals(statusType);
-    }
+//    public static boolean isAdministrator() {
+//        String statusType = mSharedPreferences.getString(ConstantUtlis.SP_STATUS_TYPE, "");
+//        return "负责人".equals(statusType);
+//    }
 
     /**
      * 判断是否负责人
      *
      * @return true负责人
      */
-    public static boolean isAdministrator2() {
-        if (!isAdministrator()) {
-            mToast.showToast("无权限操作");
-        }
-        return isAdministrator();
-    }
+//    public static boolean isAdministrator2() {
+//        if (!isAdministrator()) {
+//            mToast.showToast("无权限操作");
+//        }
+//        return isAdministrator();
+//    }
 
     public static void exitLogon() {
         mSharedPreferences.setBoolean(ConstantUtlis.SP_IS_LOGIN, false);

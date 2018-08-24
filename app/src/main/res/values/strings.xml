@@ -7,8 +7,8 @@
 
     <string name="app_sp">mind</string>
 
-    <string name="app_url_api">https://quanqdg88.cn:8088/</string>
-    <string name="app_url_api_debug">http://120.79.224.38:8088/</string>
+    <string name="app_url_api">http://120.79.224.38:1688/</string>
+    <string name="app_url_api_debug">http://120.79.224.38:1688/</string>
 
 
     <string name="save">保存</string>
@@ -17,6 +17,26 @@
 
     <string name="app_default_money">0.00</string>
     <string name="app_default_int">0</string>
+
+    <string name="phone">手机号码</string>
+    <string name="phone_hint">请输入手机号码</string>
+    <string name="phone_toast">请输入有效手机号</string>
+    <string name="code">验证码</string>
+    <string name="code_hint">请输入验证码</string>
+    <string name="get_code">获取验证码</string>
+    <string name="get_code_count_down">%sS后获取</string>
+    <string name="next">下一步</string>
+    <string name="set_pwd">设置密码</string>
+    <string name="set_pwd_hint">6-15位字母大小写与数字组合</string>
+    <string name="set_pwd2">再次确认密码</string>
+    <string name="set_pwd_toast">请输入密码</string>
+    <string name="set_pwd_toast0">请确认密码</string>
+    <string name="set_pwd_toast1">密码不一致,请重新设置</string>
+    <string name="set_pwd_toast2">密码长度为6到15位</string>
+    <string name="set_pwd_toast3">密码必须同时包含大小写字母和数字</string>
+    <string name="complete">完成</string>
+    <string name="success">成功</string>
+    <string name="get_code_success">获取验证码成功</string>
 
 
     <!--main start-->
@@ -32,49 +52,19 @@
     <string name="login_account_toast">请输入有效账号</string>
     <string name="login_pwd">密码</string>
     <string name="login_pwd_hint">请输入登录密码</string>
-    <string name="login_phone">手机号码</string>
-    <string name="login_phone_hint">请输入手机号码</string>
-    <string name="login_phone_toast">请输入有效手机号</string>
-    <string name="login_code">验证码</string>
-    <string name="login_code_hint">请输入验证码</string>
-    <string name="login_get_code">获取验证码</string>
     <string name="login_phone_login">手机验证码登录</string>
     <string name="login_account_login">账号密码登录</string>
     <string name="login_froget_pwd">忘记密码?</string>
 
     <!--Register start-->
     <string name="register_title">注册</string>
-    <string name="register_phone">手机号码</string>
-    <string name="register_phone_hint">请输入手机号码</string>
-    <string name="register_phone_toast">请输入有效手机号</string>
-    <string name="register_code">验证码</string>
-    <string name="register_code_hint">请输入验证码</string>
-    <string name="register_get_code">获取验证码</string>
-    <string name="register_next">下一步</string>
     <string name="register_account">设置登录账号,注册后不可更改</string>
     <string name="register_account_hint">6-11位数字</string>
     <string name="register_account_toast">账号只能设置为6-11位数字</string>
-    <string name="register_pwd">设置密码</string>
-    <string name="register_pwd_hint">6-15位字母大小写与数字组合</string>
-    <string name="register_pwd2">再次确认密码</string>
-    <string name="register_pwd2_hint">6-15位字母大小写与数字组合</string>
-    <string name="register_pwd_toast">密码不一致,请重新设置</string>
+    <string name="register_account_toast2">请设置登录账号</string>
 
     <!--ForgetPwd start-->
     <string name="forgetPwd_title">找回密码</string>
-    <string name="forgetPwd_phone">手机号码</string>
-    <string name="forgetPwd_phone_hint">请输入手机号码</string>
-    <string name="forgetPwd_phone_toast">请输入有效手机号</string>
-    <string name="forgetPwd_code">验证码</string>
-    <string name="forgetPwd_code_hint">请输入验证码</string>
-    <string name="forgetPwd_get_code">获取验证码</string>
-    <string name="forgetPwd_next">下一步</string>
-    <string name="forgetPwd_pwd">设置密码</string>
-    <string name="forgetPwd_pwd_hint">6-15位字母大小写与数字组合</string>
-    <string name="forgetPwd_pwd2">再次确认密码</string>
-    <string name="forgetPwd_pwd2_hint">6-15位字母大小写与数字组合</string>
-    <string name="forgetPwd_pwd_toast">密码不一致,请重新设置</string>
-    <string name="forgetPwd_complete">完成</string>
 
     <!--Shop start-->
     <string name="shop_title">店铺</string>
@@ -92,6 +82,13 @@
 
     <!--My start-->
     <string name="my_title">我的</string>
+    <string name="my_pofit">我的收益</string>
+    <string name="my_put_forward">提现</string>
+    <string name="my_branch">我的分店</string>
+    <string name="my_alipay">我的支付宝</string>
+    <string name="my_pwd">密码管理</string>
+    <string name="my_authentication">实名认证</string>
+    <string name="my_setting">设置</string>
 
     <!--Order start-->
     <string name="order_title">订单</string>

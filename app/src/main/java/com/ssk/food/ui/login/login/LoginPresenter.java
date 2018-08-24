@@ -1,5 +1,8 @@
 package com.ssk.food.ui.login.login;
 
+import com.google.gson.Gson;
+import com.ssk.food.bean.LoginBean;
+import com.ssk.food.utils.ConstantUtlis;
 import com.zhtx.mindlib.base.BasePresenter;
 import com.ssk.food.server.RequestAction;
 
@@ -41,21 +44,25 @@ public class LoginPresenter extends BasePresenter<LoginContract.ContView> implem
         addSubscribe(requestAction.phoneLogin(mRetrofitHelper, this, phone, code));
     }
 
+
     @Override
     public void onSuccess2(int tag, boolean isRefreshLoad, JSONObject response) throws JSONException {
         super.onSuccess2(tag, isRefreshLoad, response);
         switch (tag) {
             case TAG_GET_LOGIN_CODE:
-
+                mToast.showToast("获取验证码成功");
                 break;
             case TAG_ACCOUNT_LOGIN:
-
-                mView.loginSuccess();
-                break;
             case TAG_PHONE_LOGIN:
-
+                LoginBean loginBean = new Gson().fromJson(response.toString(), LoginBean.class);
+                mSharedPreferences.setString(ConstantUtlis.SP_ACCOUNT, loginBean.getAccount());
+                mSharedPreferences.setString(ConstantUtlis.SP_RANDOM, loginBean.getRandom());
+                mSharedPreferences.setString(ConstantUtlis.SP_NIKE_NAME, loginBean.getNikeName());
+                mSharedPreferences.setString(ConstantUtlis.SP_IS_MAIN_ACCOUNT, loginBean.getIsMainCount());
                 mView.loginSuccess();
                 break;
         }
     }
+
+
 }

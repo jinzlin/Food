@@ -2,119 +2,116 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:paddingLeft="60px"
-    android:paddingRight="60px">
+    android:background="@color/white">
 
 
-    <TextView
-        android:id="@+id/tv_login_account"
-        style="@style/text_b3_30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40px"
-        android:text="@string/login_account" />
-
-    <EditText
-        android:id="@+id/et_login_account"
-        style="@style/input_30_left"
-        android:layout_height="112px"
-        android:layout_below="@+id/tv_login_account"
-        android:hint="@string/login_account_hint"
-        android:inputType="number"
-        android:maxLength="11" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2px"
-        android:layout_below="@+id/et_login_account"
-        android:background="@color/grayc" />
-
-
-    <TextView
-        android:id="@+id/tv_login_pwd"
-        style="@style/text_b3_30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_login_account"
-        android:layout_marginTop="56px"
-        android:text="@string/login_pwd" />
-
-    <!--密码-->
     <RelativeLayout
-        android:id="@+id/rl_01"
+        android:id="@+id/rl_login"
         android:layout_width="match_parent"
-        android:layout_height="112px"
-        android:layout_below="@+id/tv_login_pwd">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60px"
+        android:layout_marginRight="60px">
 
+        <TextView
+            android:id="@+id/tv_login_account"
+            style="@style/text_b3_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40px"
+            android:text="@string/login_account" />
 
         <EditText
-            android:id="@+id/et_login_pwd"
+            android:id="@+id/et_login_account"
             style="@style/input_30_left"
-            android:layout_toLeftOf="@+id/rl_login_del"
-            android:hint="@string/login_pwd_hint"
-            android:inputType="textPassword" />
+            android:layout_height="100px"
+            android:layout_below="@+id/tv_login_account"
+            android:hint="@string/login_account_hint"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColorHint="@color/grayc" />
 
-        <RelativeLayout
-            android:id="@+id/rl_login_get_code"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/et_login_account"
+            android:background="@color/black9" />
+
+
+        <TextView
+            android:id="@+id/tv_login_pwd"
+            style="@style/text_b3_30"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:visibility="gone">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_login_account"
+            android:layout_marginTop="56px"
+            android:text="@string/login_pwd" />
 
-            <View
-                android:layout_width="1px"
-                android:layout_height="16px"
-                android:layout_centerVertical="true"
-                android:background="@color/grayc" />
-
-            <TextView
-                android:layout_width="178px"
-                android:layout_height="match_parent"
-                android:gravity="right|center_vertical"
-                android:text="@string/login_get_code"
-                android:textColor="@color/colorMain"
-                android:textSize="30px" />
-
-        </RelativeLayout>
-
-        <!--清空-->
+        <!--密码-->
         <RelativeLayout
-            android:id="@+id/rl_login_del"
-            android:layout_width="80px"
-            android:layout_height="112px"
-            android:layout_toLeftOf="@+id/rl_login_show">
+            android:id="@+id/rl_01"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:layout_below="@+id/tv_login_pwd">
 
-            <ImageView
-                android:layout_width="32px"
-                android:layout_height="32px"
-                android:layout_centerInParent="true"
-                android:background="@mipmap/ic_login_del" />
 
+            <EditText
+                android:id="@+id/et_login_pwd"
+                style="@style/input_30_left"
+                android:layout_toLeftOf="@+id/rl_login_del"
+                android:digits="0123456789abcdefghijgklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/login_pwd_hint"
+                android:inputType="textPassword"
+                android:textColorHint="@color/grayc" />
+
+
+            <!--清空-->
+            <RelativeLayout
+                android:id="@+id/rl_login_del"
+                android:layout_width="80px"
+                android:layout_height="100px"
+                android:layout_toLeftOf="@+id/rl_login_show">
+
+                <ImageView
+                    android:layout_width="32px"
+                    android:layout_height="32px"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/ic_text_del" />
+
+            </RelativeLayout>
+
+            <!--显示隐藏密码-->
+            <RelativeLayout
+                android:id="@+id/rl_login_show"
+                android:layout_width="80px"
+                android:layout_height="100px"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:id="@+id/iv_login_show"
+                    android:layout_width="32px"
+                    android:layout_height="32px"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/ic_pwd_unshow" />
+
+            </RelativeLayout>
         </RelativeLayout>
 
-        <!--显示隐藏密码-->
-        <RelativeLayout
-            android:id="@+id/rl_login_show"
-            android:layout_width="80px"
-            android:layout_height="112px"
-            android:layout_alignParentRight="true">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/rl_01"
+            android:background="@color/black9" />
 
-            <ImageView
-                android:id="@+id/iv_login_show"
-                android:layout_width="32px"
-                android:layout_height="32px"
-                android:layout_centerInParent="true"
-                android:src="@mipmap/ic_login_show" />
-
-        </RelativeLayout>
     </RelativeLayout>
 
-    <View
+    <FrameLayout
+        android:id="@+id/fl_login"
         android:layout_width="match_parent"
-        android:layout_height="2px"
-        android:layout_below="@+id/rl_01"
-        android:background="@color/gray6" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_login"
+        android:layout_marginLeft="60px"
+        android:layout_marginRight="60px"
+        android:visibility="gone" />
 
 
     <TextView
@@ -122,7 +119,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btn_login_login"
-        android:layout_below="@+id/rl_01"
+        android:layout_below="@+id/fl_login"
         android:layout_marginTop="10px"
         android:paddingBottom="10px"
         android:paddingTop="10px"
@@ -136,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/btn_login_login"
-        android:layout_below="@+id/rl_01"
+        android:layout_below="@+id/fl_login"
         android:layout_marginTop="10px"
         android:paddingBottom="10px"
         android:paddingTop="10px"
@@ -147,7 +144,9 @@
     <Button
         android:id="@+id/btn_login_login"
         style="@style/btn_style01"
-        android:layout_below="@+id/rl_01"
+        android:layout_below="@+id/fl_login"
+        android:layout_marginLeft="60px"
+        android:layout_marginRight="60px"
         android:layout_marginTop="134px"
         android:text="@string/login_title" />
 

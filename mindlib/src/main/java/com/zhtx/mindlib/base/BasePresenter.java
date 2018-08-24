@@ -120,22 +120,22 @@ public class BasePresenter<T extends BaseContract.BaseView> implements BaseContr
 
     @Override
     public void onSuccess(int tag, boolean isRefreshLoad, JSONObject t) {
-        if (EventTag.TAG_EVENT_REQUEST_RANDOM_ERROR.equals(JsonUtils.getString(t, "message"))) {
-            if (mSharedPreferences.getBoolean("SP_IS_LOGIN", true)) {
-                mSharedPreferences.setBoolean("SP_IS_LOGIN", false);
-                BroadcastManager.getInstance(BaseApp.getInstance()).sendBroadcast(EventTag.TAG_EVENT_REQUEST, EventTag.TAG_EVENT_REQUEST_RANDOM_ERROR);
-            }
-            return;
-        }
-        if ("0".equals(JsonUtils.getString(t, "code"))) {
+//        if (EventTag.TAG_EVENT_REQUEST_RANDOM_ERROR.equals(JsonUtils.getString(t, "message"))) {
+//            if (mSharedPreferences.getBoolean("SP_IS_LOGIN", true)) {
+//                mSharedPreferences.setBoolean("SP_IS_LOGIN", false);
+//                BroadcastManager.getInstance(BaseApp.getInstance()).sendBroadcast(EventTag.TAG_EVENT_REQUEST, EventTag.TAG_EVENT_REQUEST_RANDOM_ERROR);
+//            }
+//            return;
+//        }
+        if ("成功".equals(JsonUtils.getString(t, "状态"))) {
             try {
-                onSuccess2(tag, isRefreshLoad, JsonUtils.getJSONObject(t, "detail"));
+                onSuccess2(tag, isRefreshLoad, t);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         } else {
             try {
-                onOther(tag, isRefreshLoad, JsonUtils.getInt(t, "code"), JsonUtils.getString(t, "message"), JsonUtils.getJSONObject(t, "detail"));
+                onOther(tag, isRefreshLoad, 0, JsonUtils.getString(t, "状态"), t);
             } catch (Exception e) {
                 e.printStackTrace();
             }

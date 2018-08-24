@@ -2,6 +2,8 @@ package com.ssk.food.ui.login.login;
 
 import com.zhtx.mindlib.base.BaseContract;
 
+import org.json.JSONObject;
+
 /**
  * 作者:
  * 描述:Main
@@ -11,10 +13,6 @@ public interface LoginContract {
 
     interface ContView extends BaseContract.BaseView {
 
-        /**
-         * 获取验证码
-         */
-        void getCode();
 
         /**
          * 清空密码

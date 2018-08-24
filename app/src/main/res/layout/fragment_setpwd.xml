@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tv_set_pwd"
+        style="@style/text_b3_30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56px"
+        android:text="@string/set_pwd" />
+
+    <!--密码-->
+    <RelativeLayout
+        android:id="@+id/rl_02"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_below="@+id/tv_set_pwd">
+
+        <EditText
+            android:id="@+id/et_set_pwd"
+            style="@style/input_30_left"
+            android:digits="0123456789abcdefghijgklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/set_pwd_hint"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:textColorHint="@color/grayc" />
+
+        <!--显示隐藏密码-->
+        <RelativeLayout
+            android:id="@+id/rl_set_show1"
+            android:layout_width="80px"
+            android:layout_height="100px"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/iv_set_show"
+                android:layout_width="32px"
+                android:layout_height="32px"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_pwd_show" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/rl_02"
+        android:background="@color/black9" />
+
+    <TextView
+        android:id="@+id/tv_set_pwd2"
+        style="@style/text_b3_30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_02"
+        android:layout_marginTop="56px"
+        android:text="@string/set_pwd2" />
+
+    <!--密码-->
+    <RelativeLayout
+        android:id="@+id/rl_03"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_below="@+id/tv_set_pwd2">
+
+        <EditText
+            android:id="@+id/et_set_pwd2"
+            style="@style/input_30_left"
+            android:layout_toLeftOf="@+id/rl_set_del"
+            android:digits="0123456789abcdefghijgklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/set_pwd_hint"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:textColorHint="@color/grayc" />
+
+        <!--清空-->
+        <RelativeLayout
+            android:id="@+id/rl_set_del"
+            android:layout_width="80px"
+            android:layout_height="100px"
+            android:layout_toLeftOf="@+id/rl_set_show2"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="32px"
+                android:layout_height="32px"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/ic_text_del" />
+
+        </RelativeLayout>
+
+        <!--显示隐藏密码-->
+        <RelativeLayout
+            android:id="@+id/rl_set_show2"
+            android:layout_width="80px"
+            android:layout_height="112px"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/iv_set_show2"
+                android:layout_width="32px"
+                android:layout_height="32px"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_pwd_show" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/rl_03"
+        android:background="@color/black9" />
+
+
+</RelativeLayout>
